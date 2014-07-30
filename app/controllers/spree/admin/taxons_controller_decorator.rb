@@ -19,7 +19,7 @@ module Spree
 
       def sort_hand_count
         products = @taxon.products_taxons
-        product_ids_positions = @taxon.products.sort_by { |p| p[:count_on_hand]}.reverse.map(&:id)
+        product_ids_positions = @taxon.products.sort_by {|p| p.variants.sum(&:count_on_hand)}.reverse.map(&:id)
         product_ids_positions.each_with_index do |id, index|
           product = products.detect{|p| p.product_id == id }
           product.update_attributes(:position => index) unless product.nil?
