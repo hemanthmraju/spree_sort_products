@@ -83,10 +83,6 @@ $(document).ready(function(){
                   "label"            : "<i class='icon-pencil'></i> " + Spree.translations.rename,
                   "action"           : function (obj) { this.rename(obj); }
                 },
-                "remove" : {
-                  "label"            : "<i class='icon-trash'></i> " + Spree.translations.remove,
-                  "action"           : function (obj) { this.remove(obj); }
-                },
                 "cut" : {
                   "separator_before" : true,
                   "label"            : "<i class='icon-cut'></i> " + Spree.translations.cut,
